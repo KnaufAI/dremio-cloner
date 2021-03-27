@@ -1,0 +1,4 @@
+CLONE/
+__pycache__/
+cloner_log.log
+writer_log.log
