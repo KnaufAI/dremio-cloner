@@ -1,37 +1,38 @@
 {"dremio_cloner": [
   {"command":"get"},
   {"source": [
-	{"endpoint": "http://localhost:9047/"},
-	{"username": "<DREMIO-ADMIN-USER>"},
-	{"password": "<OPTIONAL_PASSWORD>"},
-	{"verify_ssl": "True"},
-	{"is_community_edition": "False"},
-	{"graph_api_support": "True"}]
+	{"endpoint": "https://dremio.ai.knauf.app/"},
+	{"username": "klemen"},
+	{"password": ""},
+	{"verify_ssl": "False"},
+	{"is_community_edition": "True"},
+	{"graph_api_support": "False"}]
   },
   {"target": [
-	{"directory":"<TARGET_DIRECTORY_PATH>"},
+	{"filename": "test_one_file.json"},
+	{"directory": "<DIR>"},
 	{"overwrite": "False"}]
   },
   {"options": [
 	{"logging.level":"logging.DEBUG"},
 	{"logging.format":"%(levelname)s:%(asctime)s:%(message)s"},
-	{"logging.filename":"<OPTIONAL_LOG_FILE_NAME>"},
+	{"logging.filename":"cloner_log.log"},
 	{"logging.verbose": "False"},
 
 	{"max_errors":"9999"},
-	{"http_timeout":"10"},
+	{"http_timeout":"60"},
 
 	{"user.process_mode":"process"},
 	{"group.process_mode":"process"},
 	{"space.process_mode":"process"},
 	{"source.process_mode":"process"},
-	{"reflection.process_mode": "process"},
-	{"wlm.queue.process_mode": "process"},
-	{"wlm.rule.process_mode": "process"},
+	{"reflection.process_mode": "skip"},
+	{"wlm.queue.process_mode": "skip"},
+	{"wlm.rule.process_mode": "skip"},
 	{"wiki.process_mode": "process"},
 	{"tag.process_mode": "process"},
 	{"home.process_mode": "process"},
-	{"vote.process_mode": "process"},
+	{"vote.process_mode": "skip"},
 	{"folder.process_mode": "process"},
 	{"vds.process_mode": "process"},
 	{"pds.process_mode": "process"},

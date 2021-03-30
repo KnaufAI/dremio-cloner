@@ -1,14 +1,14 @@
 {"dremio_cloner": [
 	{"command":"put"},
 	{"target": [
-	    {"endpoint": "http://localhost:9047/"},
-	    {"username": "<DREMIO-ADMIN-USER>"},
-	    {"password": "<OPTIONAL_PASSWORD>"},
-	    {"verify_ssl": "True"},
+	    {"endpoint": "https://dev-dremio.knauf.app/"},
+	    {"username": "Klemen.Strojan@knaufinsulation.com.test"},
+	    {"password": ""},
+	    {"verify_ssl": "False"},
 	  	{"is_community_edition": "False"}]
 	},
 	{"source": [
-		{"directory":"<SOURCE_DIRECTORY_PATH>"}]
+		{"directory":"<DIR>"}]
 	},
 	{"options": [
 
@@ -16,11 +16,11 @@
 
 		{"logging.level":"logging.DEBUG"},
 		{"logging.format":"%(levelname)s:%(asctime)s:%(message)s"},
-		{"logging.filename":"<OPTIONAL_LOG_FILE_NAME>"},
+		{"logging.filename":"writer_log.log"},
 	  	{"logging.verbose": "False"},
 
 		{"max_errors":"9999"},
-		{"http_timeout":"10"},
+		{"http_timeout":"60"},
 		{"source.retry_timedout":"false"},
 
 		{"space.process_mode":"create_overwrite"},
@@ -28,16 +28,15 @@
 		{"source.process_mode":"create_overwrite"},
 		{"pds.process_mode":"promote"},
 		{"vds.process_mode":"create_overwrite"},
-	    {"reflection.process_mode": "create_overwrite"},
+	    {"reflection.process_mode": "skip"},
 	    {"pds.reflection_refresh_mode": "refresh"},
 	    {"wiki.process_mode": "create_overwrite"},
 		{"tag.process_mode": "process"},
 		{"home.process_mode": "process"},
-		{"vote.process_mode": "process"},
+		{"vote.process_mode": "skip"},
 		{"wlm.queue.process_mode": "process"},
 		{"wlm.rule.process_mode": "process"},
 
-		{"transformation": {"acl": {"file": "acl_transformation.json"}}},
 
 		{"space.ignore_missing_acl_user":"True"},
 		{"space.ignore_missing_acl_group":"True"},
